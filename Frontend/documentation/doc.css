@@ -80,7 +80,11 @@ pre {
 footer {
   text-align: center;
   margin-top: 40px;
-  color: #777;
+  color: #999;
+  padding: 30px 20px;
+  border-top: 1px solid rgba(220, 88, 109, 0.2);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(10, 10, 10, 0.5));
+  font-size: 0.9rem;
 }
 
 /* Dark Theme */

@@ -7,9 +7,11 @@
   <title>Support - Sahaay</title>
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet" />
   <link rel="stylesheet" href="pages.css">
+   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <main>
   <nav>
     <div class="logo"><img src="png/fashion.png" alt="Sahaay Logo"></div>
     <ul>
@@ -38,13 +40,7 @@
 
   <div class="ellips"></div>
 
-  <!-- Support Hero Section -->
-  <section class="support-hero">
-    <div class="hero-content">
-      <h2>We're Here to Help</h2>
-      <p class="subtitle">Get answers fast, 24/7 support available</p>
-    </div>
-  </section>
+ 
 
   <!-- Quick Support Options -->
   <section class="support-section">
@@ -57,6 +53,20 @@
         <h3>Knowledge Base</h3>
         <p>Browse our comprehensive FAQ and documentation. Most issues can be resolved instantly with our self-service resources.</p>
         <p class="support-link"><a href="./documentation/doc.html">View Docs →</a></p>
+      </div>
+
+      <div class="support-card">
+        <i class="ri-chat-smile-line"></i>
+        <h3>Community Forum</h3>
+        <p>Join our active community! Share tips, ask questions, and get help from other Sahaay users. Exchange ideas and best practices with fellow members.</p>
+        <p class="support-link"><a href="https://community.sahaay.ai" target="_blank">Join Community →</a></p>
+      </div>
+
+      <div class="support-card">
+        <i class="ri-mail-open-line"></i>
+        <h3>Direct Support</h3>
+        <p>Need immediate assistance? Contact our support team directly. Average response time is under 24 hours. We're here to help resolve any issues quickly.</p>
+        <p class="support-link"><a href="mailto:support@sahaay.ai">Email Support →</a></p>
       </div>
     </div>
   </section>
@@ -202,23 +212,66 @@
   <section class="contact-section">
     <h2 class="section-title">Need More Help?</h2>
     <div class="contact-content">
-      <p>Can't find what you're looking for? We're here to help!</p>
+      <p class="contact-intro">We're committed to providing excellent support. Get in touch with us through any of the following channels:</p>
+      
       <div class="contact-methods">
         <div class="method">
           <i class="ri-mail-send-line"></i>
-          <p><strong>Email:</strong> <a href="mailto:support@sahaay.ai">support@sahaay.ai</a></p>
+          <div class="method-content">
+            <strong>Email Support</strong>
+            <p><a href="mailto:support@sahaay.ai">support@sahaay.ai</a></p>
+            <span class="response-time">Usually responds within 24 hours</span>
+          </div>
         </div>
+
         <div class="method">
-          <i class="ri-user-line"></i>
-          <p><strong>Creator:</strong> <a href="#">Rina Shewale</a></p>
+          <i class="ri-chat-4-line"></i>
+          <div class="method-content">
+            <strong>Live Chat</strong>
+            <p>Available on our dashboard during business hours (9 AM - 6 PM IST)</p>
+          </div>
         </div>
+
         <div class="method">
           <i class="ri-file-text-line"></i>
-          <p><strong>Documentation:</strong> <a href="./documentation/doc.html">Full API Docs</a></p>
+          <div class="method-content">
+            <strong>Full Documentation</strong>
+            <p><a href="./documentation/doc.html">Access comprehensive API docs, guides & tutorials</a></p>
+          </div>
         </div>
+
+        <div class="method">
+          <i class="ri-github-line"></i>
+          <div class="method-content">
+            <strong>GitHub Issues</strong>
+            <p>Found a bug? <a href="https://github.com/sahaay/issues" target="_blank">Report it on GitHub</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="support-cta">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#faq">Back to FAQ</a></li>
+          <li><a href="./documentation/doc.html">API Documentation</a></li>
+          <li><a href="./about.html">About Sahaay</a></li>
+          <li><a href="./feature.html">Features & Capabilities</a></li>
+        </ul>
       </div>
     </div>
   </section>
+
+
+     <footer>
+      <div class="footer-container">
+        <!-- use text-logo class to display big brand name similar to screenshot -->
+        <div class="footer-logo text-logo">sahaay</div>
+        <p>FROM WORDS TO VOICE.</p>
+        <p>&copy; 2024 Sahaay. All rights reserved.</p>
+      </div>
+    </footer>
+
+  </main>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>

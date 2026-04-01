@@ -73,20 +73,61 @@ function loadAvailableVoices() {
     const voices = speechSynthesis.getVoices();
     console.log(`✅ Available voices: ${voices.length}`);
     
-    // Group voices by language
-    const voicesByLang = {};
+    // Get unique languages from available voices
+    const uniqueLangs = {};
     voices.forEach((voice, index) => {
-        if (!voicesByLang[voice.lang]) {
-            voicesByLang[voice.lang] = [];
+        if (!uniqueLangs[voice.lang]) {
+            uniqueLangs[voice.lang] = [];
         }
-        voicesByLang[voice.lang].push(voice);
+        uniqueLangs[voice.lang].push(voice);
         console.log(`${index}: ${voice.name} (${voice.lang}) ${voice.localService ? "[Local]" : "[Remote]"}`);
     });
     
     console.log("\n🗣️ Voices by Language:");
-    Object.entries(voicesByLang).forEach(([lang, voiceList]) => {
+    Object.entries(uniqueLangs).forEach(([lang, voiceList]) => {
         console.log(`${lang}: ${voiceList.map(v => v.name).join(", ")}`);
     });
+
+    // Update language dropdown with ONLY available languages
+    updateLanguageDropdown(uniqueLangs);
+}
+
+// ===== UPDATE LANGUAGE DROPDOWN WITH AVAILABLE VOICES =====
+function updateLanguageDropdown(voicesByLang) {
+    // Language name mapping
+    const langNames = {
+        'en-US': 'English (US)',
+        'en-GB': 'English (UK)',
+        'hi-IN': 'Hindi',
+        'mr-IN': 'Marathi',
+        'fr-FR': 'French',
+        'es-ES': 'Spanish',
+        'es-MX': 'Spanish (Mexico)',
+        'de-DE': 'German',
+        'it-IT': 'Italian',
+        'ja-JP': 'Japanese',
+        'ko-KR': 'Korean',
+        'pt-BR': 'Portuguese (Brazil)',
+        'zh-CN': 'Chinese (Simplified)',
+        'zh-TW': 'Chinese (Traditional)',
+        'ru-RU': 'Russian',
+        'id-ID': 'Indonesian',
+        'pl-PL': 'Polish',
+        'nl-NL': 'Dutch'
+    };
+
+    // Clear existing options
+    voiceLang.innerHTML = '';
+
+    // Add only available languages
+    Object.keys(voicesByLang).sort().forEach(langCode => {
+        const option = document.createElement('option');
+        option.value = langCode;
+        option.textContent = langNames[langCode] || langCode;
+        voiceLang.appendChild(option);
+    });
+
+    console.log(`\n✅ Language dropdown updated with ${Object.keys(voicesByLang).length} available languages`);
 }
 
 // ===== TEST VOICE SELECTION =====
