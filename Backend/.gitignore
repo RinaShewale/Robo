@@ -1,0 +1,31 @@
+# 🔐 Environment variables
+.env
+.env.*
+
+# 🐍 Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# 📦 Distribution / packaging
+*.egg-info/
+*.egg
+dist/
+build/
+
+# 🧪 Virtual environments
+venv/
+env/
+ENV/
+
+# 📄 Logs
+*.log
+
+# 💻 IDE / Editor files
+.vscode/
+.idea/
+
+# 🗂 OS files
+.DS_Store
+Thumbs.db

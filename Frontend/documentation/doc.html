@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sahaay Documentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="doc.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Remix Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- PDF libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+
+<!-- Top Buttons -->
+<div class="top-actions">
+  <button onclick="toggleTheme()" class="icon-btn">
+    <i id="themeIcon" class="ri-moon-line"></i>
+  </button>
+
+  <button onclick="generatePDF()" class="icon-btn">
+    <i class="ri-download-2-line"></i>
+  </button>
+</div>
+
+<!-- Main Container -->
+<div class="container" id="docContent">
+
+  <header>
+    <h1>Sahaay</h1>
+    <p>AI Voice Assistant • Full Stack Documentation</p>
+  </header>
+
+  <section>
+    <h2>Why This Project Was Built</h2>
+    <p>
+      Sahaay was built to simplify interaction using voice and text.
+      It helps learners understand real-world full-stack development by combining frontend, backend, and database.
+    </p>
+  </section>
+
+  <section>
+    <h2>Project Overview</h2>
+    <p>
+      A full-stack voice assistant using Flask and PostgreSQL with UI + backend integration.
+    </p>
+  </section>
+
+  <section>
+    <h2>Installation & Run Commands</h2>
+    <pre><code>
+# 1. Go to backend folder
+cd Robo_speaker/backend
+
+# 2. Create virtual environment
+python -m venv venv
+
+# 3. Activate environment
+# Windows:
+venv\Scripts\activate
+# Mac/Linux:
+source venv/bin/activate
+
+# 4. Install dependencies
+pip install flask flask-cors psycopg2 python-dotenv
+
+# 5. Run backend server
+python app.py</code></pre>
+
+    <p>Frontend (if separate folder):</p>
+    <pre><code>cd frontend
+python -m http.server 5500</code></pre>
+    <p>Open browser at: <code>http://127.0.0.1:5500</code></p>
+  </section>
+
+  <section>
+    <h2>Database Structure</h2>
+    <pre><code>CREATE DATABASE Website_database;
+
+CREATE TABLE app_users (
+  id SERIAL PRIMARY KEY,
+  username VARCHAR(100),
+  email VARCHAR(100) UNIQUE,
+  password_hash TEXT
+);
+
+CREATE TABLE chat_messages (
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER REFERENCES app_users(id),
+  message_content TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE voice_interactions (
+  id SERIAL PRIMARY KEY,
+  user_input TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);</code></pre>
+
+    <p>
+      <b>app_users:</b> user data <br>
+      <b>chat_messages:</b> chat storage <br>
+      <b>voice_interactions:</b> voice logs
+    </p>
+  </section>
+
+  <section>
+    <h2>Backend Architecture</h2>
+    <ul>
+      <li>app.py → main server</li>
+      <li>auth.py → login/register</li>
+      <li>message.py → message handling</li>
+      <li>database.py → DB connection</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Authentication APIs (Register & Login)</h2>
+    <p>All requests must use JSON format in Thunder Client or curl.</p>
+
+    <h3>Register User</h3>
+    <p>Thunder Client POST request:</p>
+    <pre><code>POST http://127.0.0.1:5000/register
+{
+  "username": "newuser",
+  "email": "user@example.com",
+  "password": "mypassword"
+}</code></pre>
+
+    <p>curl command:</p>
+    <pre><code>curl -X POST http://127.0.0.1:5000/register \
+-H "Content-Type: application/json" \
+-d '{"username": "newuser", "email": "user@example.com", "password": "mypassword"}'</code></pre>
+
+    <h3>Login User</h3>
+    <p>Thunder Client POST request:</p>
+    <pre><code>POST http://127.0.0.1:5000/login
+{
+  "username": "newuser",
+  "password": "mypassword"
+}</code></pre>
+
+    <p>curl command:</p>
+    <pre><code>curl -X POST http://127.0.0.1:5000/login \
+-H "Content-Type: application/json" \
+-d '{"username": "newuser", "password": "mypassword"}'</code></pre>
+  </section>
+
+  <section>
+    <h2>Testing Chat APIs</h2>
+    <h3>GET messages</h3>
+    <pre><code>GET http://127.0.0.1:5000/messages</code></pre>
+
+    <h3>POST chat message</h3>
+    <pre><code>POST http://127.0.0.1:5000/message
+{
+  "user_id": 1,
+  "message_content": "Hello AI"
+}</code></pre>
+
+    <p>curl command:</p>
+    <pre><code>curl -X POST http://127.0.0.1:5000/message \
+-H "Content-Type: application/json" \
+-d '{"user_id": 1, "message_content": "Hello AI"}'</code></pre>
+  </section>
+
+  <section>
+    <h2>Features</h2>
+    <div class="grid">
+      <div class="card">Authentication</div>
+      <div class="card">Voice Assistant</div>
+      <div class="card">Message Storage</div>
+      <div class="card">Document Generator</div>
+      <div class="card">Dashboard</div>
+      <div class="card">Responsive UI</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Tech Stack</h2>
+    <ul>
+      <li><b>Frontend:</b> HTML, CSS, JavaScript</li>
+      <li><b>Backend:</b> Python (Flask)</li>
+      <li><b>Database:</b> PostgreSQL</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Workflow</h2>
+    <ol>
+      <li>User registers or logs in</li>
+      <li>Frontend sends request to backend</li>
+      <li>Backend processes & stores data</li>
+      <li>Response sent back to UI</li>
+      <li>User sees result on frontend</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Future Scope</h2>
+    <ul>
+      <li>AI / GenAI integration</li>
+      <li>Real-time chat using Socket.io</li>
+      <li>Cloud deployment</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Conclusion</h2>
+    <p>
+      Sahaay demonstrates full-stack development, combining frontend, backend, authentication, and database with real-world application.
+    </p>
+  </section>
+
+  <footer>
+    <p>Documentation prepared by Rina Shewale</p>
+  </footer>
+</div>
+
+<script src="doc.js"></script>
+</body>
+</html>

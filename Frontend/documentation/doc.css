@@ -1,0 +1,101 @@
+:root {
+  --bg-color: #f5f5f5;
+  --text-color: #333;
+  --card-bg: #fff;
+  --header-color: #4c1D3D;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  background: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h2 {
+  color: var(--header-color);
+  margin-bottom: 10px;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+pre {
+  background: #f0f0f0;
+  padding: 15px;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.top-actions {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.icon-btn {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  color: #777;
+}
+
+/* Dark Theme */
+body.dark-theme {
+  --bg-color: #121212;
+  --text-color: #eee;
+  --card-bg: #1e1e1e;
+  --header-color: #ff80ab;
+}
+
+body.dark-theme pre {
+  background: #2b2b2b;
+}
+
+body.dark-theme .card {
+  background: #2b2b2b;
+  border: 1px solid #555;
+}

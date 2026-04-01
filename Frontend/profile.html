@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR (desktop) -->
+  <div class="sidebar" id="sidebar">
+    <h2 class="logo"><img src="./png/fashion.png" alt=""></h2>
+
+    <div class="nav">
+      <a href="index.html" class="nav-item"><i class="ri-home-4-line"></i><span>Home</span></a>
+      <a href="assistent.html" class="nav-item"><i class="ri-mic-line"></i><span>Assistant</span></a>
+      <a href="profile.html" class="nav-item active"><i class="ri-user-3-line"></i><span>Profile</span></a>
+
+      <a href="#" id="edit-btn" class="nav-item"><i class="ri-edit-line"></i><span>Edit Profile</span></a>
+      <a href="#" id="logout-btn" class="nav-item logout"><i class="ri-logout-box-r-line"></i><span>Logout</span></a>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <!-- Mobile topbar -->
+    <div class="mobile-topbar">
+      <img class="menu-logo" src="./png/fashion.png" alt="">
+      <i class="ri-menu-line" id="menu-btn"></i>
+    </div>
+
+    <h2>👋 Welcome to Sahhay Dashboard</h2>
+
+    <div class="profile-grid">
+
+      <div class="profile-card glass">
+        <div class="avatar"><i class="ri-user-3-line"></i></div>
+        <h3 id="username2">User</h3>
+        <p id="email">user@email.com</p>
+      </div>
+
+      <div class="stats-card glass">
+        <h2>📊 Activity</h2>
+        <div class="stats">
+          <div><h2 id="msg-count">0</h2><p>Messages</p></div>
+          <div><h2 id="voice-count">0</h2><p>Voice</p></div>
+          <div><h2 id="lang-count">0</h2><p>Languages</p></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="message-history glass">
+      <h3>💬 Messages
+
+         <button id="delete-all-btn">Delete All</button>
+      </h3>
+      
+      <div id="messages-container"></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- EDIT MODAL -->
+<div id="edit-modal" class="modal">
+  <div class="modal-content">
+    <h3>Edit Profile</h3>
+
+    <input type="text" id="edit-username" placeholder="Username">
+    <input type="email" id="edit-email" placeholder="Email">
+
+    <div class="modal-actions">
+      <button id="save-profile">Save</button>
+      <button id="cancel-edit">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE SIDEBAR -->
+<div class="mobile-sidebar" id="mobile-sidebar">
+  <div class="mobile-nav">
+    <a href="index.html" class="nav-item"><i class="ri-home-4-line"></i><span>Home</span></a>
+    <a href="assistent.html" class="nav-item"><i class="ri-mic-line"></i><span>Assistant</span></a>
+    <a href="profile.html" class="nav-item"><i class="ri-user-3-line"></i><span>Profile</span></a>
+    <a href="#" id="edit-btn-mobile" class="nav-item"><i class="ri-edit-line"></i><span>Edit Profile</span></a>
+    <a href="#" id="logout-btn-mobile" class="nav-item logout"><i class="ri-logout-box-r-line"></i><span>Logout</span></a>
+  </div>
+</div>
+
+<script src="profile.js"></script>
+</body>
+</html>

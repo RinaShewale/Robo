@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Sahaay</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+
+  <section class="login">
+    <div class="form-container">
+      <h2>Welcome Back to Sahaay</h2>
+
+
+      <!-- OR separator -->
+      <div class="divider">
+        <span>OR</span>
+      </div>
+
+      <!-- Google Sign In Button -->
+      <button type="button" class="google-btn" id="google-signin">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt3SlMjJIfui7ID0cIvHD4HNWgAzWPLZroWA&s"
+          alt="Google logo">
+        Sign in with Google
+      </button>
+      <form class="login-form">
+        <!-- Fake inputs to prevent browser autofill -->
+        <input type="text" name="fakeusernameremembered" style="display:none">
+        <input type="password" name="fakepasswordremembered" style="display:none">
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter your email" required autocomplete="off">
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="password-wrapper">
+            <input type="password" id="password" placeholder="Enter your password" required autocomplete="new-password">
+            <button type="button" id="toggle-password" class="toggle-pass"><i class="ri-eye-line"></i></button>
+          </div>
+        </div>
+
+        <button type="submit" class="login-btn  primary-btn">Login</button>
+      </form>
+
+      <p class="redirect">
+        Don’t have an account? <a href="register.html">Sign Up</a>
+      </p>
+    </div>
+  </section>
+
+  <script src="form.js"></script>
+</body>
+
+</html>
