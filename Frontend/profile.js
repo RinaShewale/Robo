@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!username || !email) return alert("All fields required");
 
     try {
-      const res = await fetch("https://robo-website-ce0e.onrender.com/auth/update_profile", {
+      const res = await fetch("https://robo-t52y.onrender.com/auth/update_profile", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id: userId, username, email })
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
   logoutBtns.forEach(btn => btn.addEventListener("click", async e => {
     e.preventDefault();
     try {
-      await fetch("https://robo-website-ce0e.onrender.com/auth/logout", { method: "POST" });
+      await fetch("https://robo-t52y.onrender.com/auth/logout", { method: "POST" });
     } catch (err) {
       console.error("Logout error ❌", err);
     } finally {
@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ===== LOAD MESSAGES & STATS =====
   async function loadMessages() {
     try {
-      const res = await fetch(`https://robo-website-ce0e.onrender.com/messages/get_messages/${userId}`);
+      const res = await fetch(`https://robo-t52y.onrender.com/messages/get_messages/${userId}`);
       if (!res.ok) throw new Error("Failed to fetch messages");
 
       const messages = await res.json();
@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!confirm("Are you sure you want to delete all messages? ❌")) return;
 
       try {
-        const res = await fetch(`https://robo-website-ce0e.onrender.com/messages/delete_all/${userId}`, {
+        const res = await fetch(`https://robo-t52y.onrender.com/messages/delete_all/${userId}`, {
           method: "DELETE"
         });
 

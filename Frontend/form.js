@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!valid) return;
 
       try {
-        const res = await fetch('https://robo-website-ce0e.onrender.com/auth/register', {
+        const res = await fetch('https://robo-t52y.onrender.com/auth/register', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ username, email, password })
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!valid) return;
 
       try {
-        const res = await fetch('https://robo-website-ce0e.onrender.com/auth/login', {
+        const res = await fetch('https://robo-t52y.onrender.com/auth/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, password })
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!valid) return;
 
       try {
-        const res = await fetch('https://robo-website-ce0e.onrender.com/auth/update_profile', {
+        const res = await fetch('https://robo-t52y.onrender.com/auth/update_profile', {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ id: userId, username, email })

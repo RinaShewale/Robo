@@ -116,7 +116,7 @@ async function loadMessages() {
     if (!userId) return;
 
     try {
-        const res = await fetch(`https://robo-website-ce0e.onrender.com/messages/get_messages/${userId}?t=${Date.now()}`);
+        const res = await fetch(`https://robo-t52y.onrender.com/messages/get_messages/${userId}?t=${Date.now()}`);
         const messages = await res.json();
         messagesContainer.innerHTML = "";
 
@@ -187,7 +187,7 @@ async function speakAndSave() {
 
     // ===== SAVE TO DATABASE =====
     try {
-        const res = await fetch("https://robo-website-ce0e.onrender.com/messages/save_message", {
+        const res = await fetch("https://robo-t52y.onrender.com/messages/save_message", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ userId, message: text })
